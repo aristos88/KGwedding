@@ -6,6 +6,45 @@
       $('.sakura-falling').sakura();
 })(jQuery);
 
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        if (document.getElementsByClassName("date")[0]){
+            document.getElementsByClassName("date")[0].style.display = "inline";
+        }
+        if (document.getElementById("but")){
+            document.getElementById("but").remove();
+        }
+        if (document.getElementById("myProgress")){
+            document.getElementById("myProgress").remove();
+        }
+        if (document.getElementById("myBar")){
+            document.getElementById("myBar").remove();
+        }
+        if (document.getElementById("time")){
+            document.getElementById("time").style.display = "inline";
+        }
+        if (document.getElementsByClassName("footer")[0]){
+            document.getElementsByClassName("footer")[0].style.display = "inline";
+        }
+        document.getElementById("my_audio").play();
+
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
 /**
  *
  * Despite so many new Bollywood and English song options, I prefered to use two-decade-old song, Din Shagna Da!
@@ -20,10 +59,9 @@
  * Listen here: https://youtu.be/X0MDALpV29s
  *
  */
-$(document).on('click', function(){
-    document.getElementById("my_audio").play();
-    console.log('Shaadi me zaroor aana');
-});
+//$(document).on('click', function(){
+    //document.getElementById("my_audio").play();
+//});
 
 // Set the date we're counting down to
 var countDownDate = new Date("Sep 20, 2025 15:00:00").getTime();
@@ -84,12 +122,3 @@ var styles2 = [
     , 'font-weight: bold'
     , 'font-size: 32px'
 ].join(';');
-
-console.log('\n\n%c SAVE THE DATE: 29th Nov, 2020!', styles);
-
-console.log('%cYour presence is requested!%c\n\nRegards: Vinit Shahdeo', styles1, styles2);
-
-console.log(
-    `%cShaadi me zaroor aana!\n\n`,
-    'color: yellow; background:tomato; font-size: 24pt; font-weight: bold',
-)
