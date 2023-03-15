@@ -577,3 +577,28 @@ a {
 	font-size: 12px;
 	letter-spacing: 0pt;
 }
+
+#myProgress {
+	width: 100%;
+	background-color: #ddd;
+  }
+  
+  #myBar {
+	width: 1%;
+	height: 40px;
+	background-color: #674ea7;
+  }
+
+  #but {
+	background-color: #674ea7;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 12px;
+  }
